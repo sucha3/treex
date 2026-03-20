@@ -4,14 +4,25 @@ extended bash tree that groups files by extension and summarizes each group with
 ```bash
 # setup
 echo "alias treex='python3 tree_limited.py'" >> ~/.zshrc
+```
 
-treex .
-# Custom depth and limit
-treex . -L 2 -n 5
+## example output
+```
+$ treex .
+~/repo
+├── test1.tar.gz
+├── test10.tar.gz
+├── ... (8) *.tar.gz files remaining
+├── test1.txt
+├── test2.txt
+├── ... (3) *.txt files remaining
+├── test1.md
+├── test10.md
+└── ... (8) *.md files remaining
 ```
 
 
-## Usage
+## usage
 
 ```
 positional arguments:
@@ -19,6 +30,6 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-  -L L        Max display depth.
-  -n N        Max entries per group.
+  -L L        Max display depth (default: 3).
+  -n N        Max entries per group (default: 3).
 ```
